@@ -86,7 +86,7 @@ python flask_api_test_client.py
 
 ## 👤 Author
 
-[Your Name] • [LinkedIn] • [GitHub]
+WENYAO CHUNG • [https://www.linkedin.com/in/wenyao-chung/]
 
 ---
 
