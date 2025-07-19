@@ -11,10 +11,17 @@ from threading import Thread
 
 #Allows Colab to expose local Flask server to public.
 from pyngrok import ngrok
-
+from dotenv import load_dotenv
 import random
 import json
 import os
+
+# ✅ Load .env file
+load_dotenv()
+
+# ✅ Set your ngrok authtoken securely
+ngrok_token = os.getenv("NGROK_AUTH_TOKEN")
+ngrok.set_auth_token(ngrok_token)
 
 # Kills any existing ngrok tunnels, avoiding conflicts when you re-run the cell.
 ngrok.kill()
