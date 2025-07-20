@@ -58,6 +58,31 @@ python flask_api_test_client.py
 
 ---
 
+## ✅ Sample Test Output
+
+> Output from running `Todo_List_API.py` and `flask_api_test_client.py`
+
+```
+🌐 Public URL: https://xxxxxxx.ngrok-free.app
+
+🚀 Server Ping Status: 200
+📢 Ping Response: ✅ Student Management from Flask V2.7
+
+✅ POST: 201 {'message': '✅ Student added', 'student': {'id': '1', 'name': 'Alice', 'status': 'NA', 'task': 'homework'}}
+
+✅ GET: 200 [{'id': '1', 'name': 'Alice', 'status': 'NA', 'task': 'homework'}]
+
+✅ PUT: 200 {'message': '✅ Student updated', 'student': {'id': '1', 'name': 'Alice Updated', 'status': 'In progress', 'task': 'Prepare for exam'}}
+
+✅ Update student - GET: 200 [{'id': '1', 'name': 'Alice Updated', 'status': 'In progress', 'task': 'Prepare for exam'}]
+
+✅ DELETE: 200 {'message': '✅ student delete', 'student': []}
+
+✅ Delete student - GET: 200 []
+```
+
+---
+
 ## 🧰 API Routes
 
 | Method | Endpoint              | Description              |
@@ -70,6 +95,50 @@ python flask_api_test_client.py
 ---
 
 ## 🔐 Notes
+---
+
+## ⚠️ Ngrok Permissions on Windows
+
+If you're running this project locally on Windows for the first time, you may encounter this error when `pyngrok` tries to install `ngrok.exe`:
+
+```
+PermissionError: [Errno 13] Permission denied:
+```
+
+### ✅ Solutions:
+
+1. **Run your terminal as Administrator**  
+   Right-click on Command Prompt or PowerShell → “Run as administrator”
+
+2. **Manually download ngrok**  
+   - Download from: [https://ngrok.com/download](https://ngrok.com/download)  
+   - Extract `ngrok.exe` to a custom path like `D:/Tools/ngrok.exe`
+   - Update the script to use that path:
+
+```python
+from pyngrok import conf
+pyngrok_config = conf.PyngrokConfig(ngrok_path="D:/Tools/ngrok.exe")
+```
+
+3. **Use ngrok in Google Colab**  
+   This repo supports Google Colab where ngrok is automatically installed.
+
+---
+
+### ✅ .env and Token Safety
+
+Store your `NGROK_AUTH_TOKEN` in a `.env` file like this:
+
+```
+NGROK_AUTH_TOKEN=your-token-here
+```
+
+Make sure `.env` is listed in `.gitignore` to avoid accidentally uploading it:
+
+```
+# .gitignore
+.env
+```
 
 - Do **not** upload your personal `ngrok` token to public repositories.
 - This API is for **practice/demo** purposes and does not use a database or authentication.
@@ -86,7 +155,7 @@ python flask_api_test_client.py
 
 ## 👤 Author
 
-WENYAO CHUNG • [https://www.linkedin.com/in/wenyao-chung/]
+[Your Name] • [LinkedIn] • [GitHub]
 
 ---
 
