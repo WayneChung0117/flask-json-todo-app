@@ -155,7 +155,7 @@ Make sure `.env` is listed in `.gitignore` to avoid accidentally uploading it:
 
 ## 👤 Author
 
-[Your Name] • [LinkedIn] • [GitHub]
+Wayne Chung
 
 ---
 
